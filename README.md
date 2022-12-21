@@ -1,8 +1,29 @@
-# vue_atomic_ojt
+# Sample Vue Atomic Frame Structure
 
-This template should help get you started developing with Vue 3 in Vite.
+├── assets
+│   ├── styles
+│       ├── [app.scss](#app.scss)
+│       ├── style.scss
+├── components
+│   ├── atoms
+│   ├── molecules
+│   ├── organisms
+│   ├── templates
+├── composables
+├── modules
+├── pages
+├── repositories
+│   ├── client
+│   ├── RepositoryFactory.ts
+│   ├── someFactory.ts
+├── router
+├── store
+├── App.vue
+└── main.ts
 
-## Recommended IDE Setup
+#app.scss
+Contains the common style sheet for the app.
+
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
