@@ -1,109 +1,62 @@
 # Sample Vue Atomic Frame Structure
 
-├── assets
-│   ├── styles
-│       ├── [app.scss](#app.scss)
-│       ├── style.scss
-├── components
-│   ├── atoms
-│   ├── molecules
-│   ├── organisms
-│   ├── templates
-├── composables
-├── modules
-├── pages
-├── repositories
-│   ├── client
-│   ├── RepositoryFactory.ts
-│   ├── someFactory.ts
-├── router
-├── store
-├── App.vue
-└── main.ts
+* src
+  * assets
+    * styles
+      * [app.scss](#common-style)
+      * [styles.scss](#scss-variable)
+  * components
+    * [atoms](#atoms)
+    * [molecules](#molecules)
+    * [organisms](#organisms)
+    * [templates](#templates)
+  * [composables](#composables)
+  * [modules](#modules)
+  * [pages](#pages)
+  * repositories
+    * [client](#client)
+    * [RepositoryFactory.ts](#repository)
+  * [router](#router)
+  * [store](#store)
+  * App.vue
+  * main.ts
 
-#app.scss
+## Common Style
 Contains the common style sheet for the app.
 
+## Scss Variable
+Contains the scss variable to use in all components.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Atoms
+Contains the app's atom components like buttons, links, input elements.
 
-## Type Support for `.vue` Imports in TS
+## Molecules
+Contains the app's molecular level components like form control block.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Organisms
+Contains the app's organisms components like Navbar.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Templates
+Contains the app's templates level components like form template.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Composables
+Contain files that serves as a seperate data object for form and fetched api data. Set data which is fetched from api to this
+composables files and get data from all other components.
 
-## Customize configuration
+## Modules
+Contain files that export type as class constructor for each app's data.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Pages
+Contains app's pages.
 
-## Project Setup
+## Client
+Contains app's api fetching axios client initialization and configuration files.
 
-```sh
-npm install
-```
+## Repository
+Repositories are api data fetching service for each app's data. Every different data must have its own repository and each repository shoud be extracted from RepositoryFactory.
 
-### Compile and Hot-Reload for Development
+## Router
+Contains app's routing services.
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-* [src/](.\vue_atomic_ojt\src)
-  * [assets/](.\vue_atomic_ojt\src\assets)
-    * [styles/](.\vue_atomic_ojt\src\assets\styles)
-      * [foundation/](.\vue_atomic_ojt\src\assets\styles\foundation)
-        * [settings/](.\vue_atomic_ojt\src\assets\styles\foundation\settings)
-        * [_base.scss](.\vue_atomic_ojt\src\assets\styles\foundation\_base.scss)
-        * [_reset.scss](.\vue_atomic_ojt\src\assets\styles\foundation\_reset.scss)
-      * [app.scss](.\vue_atomic_ojt\src\assets\styles\app.scss)
-      * [styles.scss](.\vue_atomic_ojt\src\assets\styles\styles.scss)
-  * [components/](.\vue_atomic_ojt\src\components)
-    * [atoms/](.\vue_atomic_ojt\src\components\atoms)
-      * [VAlert/](.\vue_atomic_ojt\src\components\atoms\VAlert)
-        * [VAlert.vue](.\vue_atomic_ojt\src\components\atoms\VAlert\VAlert.vue)
-      * [VBtn/](.\vue_atomic_ojt\src\components\atoms\VBtn)
-        * [VBtn.vue](.\vue_atomic_ojt\src\components\atoms\VBtn\VBtn.vue)
-      * [VError/](.\vue_atomic_ojt\src\components\atoms\VError)
-        * [VError.vue](.\vue_atomic_ojt\src\components\atoms\VError\VError.vue)
-      * [VInputText/](.\vue_atomic_ojt\src\components\atoms\VInputText)
-        * [VInputText.vue](.\vue_atomic_ojt\src\components\atoms\VInputText\VInputText.vue)
-      * [.gitkeep](.\vue_atomic_ojt\src\components\atoms\.gitkeep)
-    * [molecules/](.\vue_atomic_ojt\src\components\molecules)
-      * [VFormControl/](.\vue_atomic_ojt\src\components\molecules\VFormControl)
-        * [VFormControl.vue](.\vue_atomic_ojt\src\components\molecules\VFormControl\VFormControl.vue)
-      * [.gitkeep](.\vue_atomic_ojt\src\components\molecules\.gitkeep)
-    * [organisms/](.\vue_atomic_ojt\src\components\organisms)
-      * [.gitkeep](.\vue_atomic_ojt\src\components\organisms\.gitkeep)
-      * [NavBar.vue](.\vue_atomic_ojt\src\components\organisms\NavBar.vue)
-    * [templates/](.\vue_atomic_ojt\src\components\templates)
-      * [.gitkeep](.\vue_atomic_ojt\src\components\templates\.gitkeep)
-      * [FormTemplate.vue](.\vue_atomic_ojt\src\components\templates\FormTemplate.vue)
-  * [composables/](.\vue_atomic_ojt\src\composables)
-    * [useLogin.ts](.\vue_atomic_ojt\src\composables\useLogin.ts)
-  * [modules/](.\vue_atomic_ojt\src\modules)
-    * [Login.ts](.\vue_atomic_ojt\src\modules\Login.ts)
-  * [pages/](.\vue_atomic_ojt\src\pages)
-    * [Login.vue](.\vue_atomic_ojt\src\pages\Login.vue)
-    * [Welcome.vue](.\vue_atomic_ojt\src\pages\Welcome.vue)
-  * [repositories/](.\vue_atomic_ojt\src\repositories)
-    * [client/](.\vue_atomic_ojt\src\repositories\client)
-      * [ApiAxiosClient.ts](.\vue_atomic_ojt\src\repositories\client\ApiAxiosClient.ts)
-    * [loginRepository.ts](.\vue_atomic_ojt\src\repositories\loginRepository.ts)
-    * [RepositoryFactory.ts](.\vue_atomic_ojt\src\repositories\RepositoryFactory.ts)
-  * [router/](.\vue_atomic_ojt\src\router)
-    * [index.ts](.\vue_atomic_ojt\src\router\index.ts)
-  * [store/](.\vue_atomic_ojt\src\store)
-    * [index.ts](.\vue_atomic_ojt\src\store\index.ts)
-  * [App.vue](.\vue_atomic_ojt\src\App.vue)
-  * [main.ts](.\vue_atomic_ojt\src\main.ts
+## Store
+Contains app's global store file.
