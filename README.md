@@ -1,5 +1,21 @@
-# Sample Vue Atomic Frame Structure
+# Vue Atomic Frame
 
+## Local Setup
+```
+cd vue_atomic_frame
+npm install
+npm run dev
+access in browser at http://localhost:3000/
+```
+
+## Versions
+```
+node => 19.0.0,
+npm => 8.19.2,
+vue => ^3.2.45,
+```
+
+## Frame Structure Detail
 * src
   * assets
     * styles
