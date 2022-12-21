@@ -2,6 +2,7 @@
 
 ## Local Setup
 ```
+git clone https://github.com/Myo-Paing-Thu/vue_atomic_frame.git
 cd vue_atomic_frame
 npm install
 npm run dev
